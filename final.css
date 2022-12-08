@@ -1,0 +1,21 @@
+#edit {
+ background-color: violet;
+ font-weight: bolder;
+ height:100%;
+}
+
+.row {
+ border-bottom: 1pt solid black;
+ margin: auto;
+ padding: 10px;
+}
+
+.col {
+ overflow:hidden;
+}
+
+#pic {
+ border-radius: 3px;
+ height: auto;
+ width: 100%
+}

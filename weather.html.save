@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="script.js?rev=1"></script>
+    <link rel="stylesheet" type="text/css" href="final.css">
+
+    <title>Weather</title>
+  </head>
+<body>
+  <div class="container" id="edit">
+
+   <div class="row">
+    <div class="col-sm">
+     <p>Date:</p>
+     <p id="date0"></p>
+    </div>
+    <div class="col-sm">
+     <p>Day:</p>
+     <p id="day0"></p>
+    </div>
+    <div class="col-sm">
+      <p>High:</p>
+      <p id="high0"></p>
+    </div>
+    <div class="col-sm">
+      <p>Low:</p>
+      <p id="low0"></p>
+    </div>
+    <div class="col-sm">
+     <p>Forecast:</p>
+     <p id="forecastDesc0"></p>
+     <img id="forecastIcon0">
+    </div>
+    <div class="col-sm">
+     <p>Visibility:</p>
+     <p id="visibility0"></p>
+    </div>
+    <div class="col-sm">
+     <p>Humidity:</p>
+     <p id="humidity0"></p>
+    </div>
+   </div>
+
+</body>
+</html>
