@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeCatalog.Views.WatchedPage"
+             Title="WatchedPage">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Watch List" VerticalOptions="Center" FontAttributes="Bold"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Home" Clicked="homeClickedAsync"/>
+
+        <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Text="Sorting:" VerticalOptions="Center"/>
+            <RadioButton x:Name="byTitle" Content="By Name" GroupName="Sort" IsChecked="True" 
+             CheckedChanged="byTitle_CheckedChanged"/>
+            <RadioButton x:Name="byRating" Content="By Rating" GroupName="Sort"
+             CheckedChanged="byRating_CheckedChanged"/>
+        </HorizontalStackLayout>
+
+        <ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="watchedListView" ItemsSource="{Binding AnimeWatchListItems}" 
+                  ItemSelected="watchedListView_ItemSelectedAsync">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding AnimeName}"/>
+                            <HorizontalStackLayout>
+                                <Label Text="Rating: "/>
+                                <Label Text="{Binding UserRating}"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

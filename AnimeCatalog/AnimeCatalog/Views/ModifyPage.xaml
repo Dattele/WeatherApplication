@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeCatalog.Views.ModifyPage"
+             Title="ModifyPage">
+
+    <Grid Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" x:Name="animeLabel" Text="Anime Name" FontAttributes="Bold" Margin="0,0,0,20"/>
+
+        <Picker Grid.Row="1" x:Name="ratingPicker" Title="User Rating" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Grid.Row="2" Text="Finish Editing" Clicked="Button_ClickedAsync" Margin="0,0,0,20"/>
+    </Grid>
+</ContentPage>

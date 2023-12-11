@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeCatalog.Views.DetailsPage"
+             Title="DetailsPage">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="animeLabel" Text="Anime Name" 
+               FontAttributes="Bold" VerticalOptions="Center"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Home" Clicked="homeClickedAsync"/>
+
+        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Summary" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+        <ScrollView Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand">
+            <Label x:Name="summaryLabel" Text="Summary Info" MaximumHeightRequest="400" LineBreakMode="WordWrap"/>
+        </ScrollView>
+
+        <HorizontalStackLayout Grid.Row="3" Grid.ColumnSpan="2">
+            <Label Text="Genre:" VerticalOptions="Center"/>
+            <Entry x:Name="genreEntry"/>
+            <Label Text="Rating:" VerticalOptions="Center"/>
+            <Entry x:Name="ratingEntry"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="4" Grid.ColumnSpan="2">
+            <Picker x:Name="ratingPicker" Title="User Rating">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>1</x:Int32>
+                        <x:Int32>2</x:Int32>
+                        <x:Int32>3</x:Int32>
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>5</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>7</x:Int32>
+                        <x:Int32>8</x:Int32>
+                        <x:Int32>9</x:Int32>
+                        <x:Int32>10</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Add to Watched" Clicked="Button_ClickedAsync"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

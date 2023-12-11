@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeCatalog.Views.AnimePage"
+             Title="AnimePage">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <SearchBar Grid.Row="0" Grid.Column="0" x:Name="ResultsSearchBar"
+                    Placeholder="Search For Anime"
+                    Margin="10" 
+                    HorizontalOptions="FillAndExpand"
+                    SearchButtonPressed="ResultsSearchBar_SearchButtonPressed"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Home" Clicked="homeClickedAsync"/>
+
+        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Anime" FontAttributes="Bold"/>
+                    
+        <ListView Grid.Row="2" Grid.ColumnSpan="2" x:Name="SearchResultsListView" ItemsSource="{Binding SearchResults}" 
+                  ItemSelected="SearchResultsListView_ItemSelectedAsync" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Title}"/>
+                            <HorizontalStackLayout>
+                                <Label Text="Rating: "/>
+                                <Label Text="{Binding Score}"/>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Synopsis}"/>
+                            <Image Source="{Binding Images.Jpg.ImageUrl}" HeightRequest="150" WidthRequest="150"/>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
