@@ -21,7 +21,7 @@ This project is currently in a semi-complete state. The core functionality, incl
 ## Getting Started
 
 1. Clone the repository: https://github.com/Dattele/WeatherApplication.git
-2. Open landing.html
+2. Open `landing.html` in your browser to view the application.
 
 ## Current Limitations
 
